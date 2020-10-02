@@ -22,7 +22,7 @@ function getNextCard () {
   // Clear answer and update length of cards
   switchSideButton.hidden = false;
   answerText.innerHTML = "";
-  remainingCards.innerHTML = cardsData.length;
+  remainingCards.innerHTML = "Remaining Cards in deck : "+cardsData.length;
 
   // Get a random card
   let randomCardIndex = Math.floor(Math.random() * cardsData.length);
@@ -47,6 +47,9 @@ function getCards(url) {
       .then(json => {cardsData = json})
       .then(reslt => {remainingCards.innerHTML = cardsData.length})
       .then(reslt => {getNextCard()})
+  // unhide
+  nextCardButton.hidden = false;
+  switchSideButton.hiddel = false
 }
 
 SOURCES.forEach(element => {selectCourse.innerHTML+="<option>"+element.title+"</option>"})

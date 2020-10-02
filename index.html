@@ -37,7 +37,7 @@
           <a href="#" class="navbar-brand d-flex align-items-center">
             <strong>IndexCards</strong>
           </a>
-          <p class="navbar-brand d-flex align-items-center"> <strong>Remaining Cards : <span id="remainingCards"></span></strong></p>
+          <p class="navbar-brand d-flex align-items-center"> <strong><span id="remainingCards">First select a deck</span></strong></p>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -50,22 +50,23 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 id="cardText" class="jumbotron-heading">This is a card</h1>
-          <p id="answerText" class="lead text-muted"></p>
-          <p>
-            <button id="switch_side" class="btn btn-secondary my-3">Other side</button>
-            <button id="next_card" class="btn btn-primary my-2">Next card</button>
-          </p>
+          <div>
+            <strong>Select a deck</strong>
+            <select class="form-control" id="selectCourseDropdown">
+            </select>
+            <button id="selectCourseSubmit" class="btn btn-primary my-2">Submit</button>
+          </div>
         </div>
       </section>
 
       <section class="jumbotron text-center">
         <div class="container">
-          <div>
-            <select class="form-control" id="selectCourseDropdown">
-            </select>
-            <button id="selectCourseSubmit" class="btn btn-primary my-2">Submit</button>
-          </div>
+          <h1 id="cardText" class="jumbotron-heading">Start by selecting a deck</h1>
+          <p id="answerText" class="lead text-muted"></p>
+          <p>
+            <button id="switch_side"  hidden="true" class="btn btn-secondary my-3">See answer</button>
+            <button id="next_card" hidden="true" class="btn btn-primary my-2">Next card</button>
+          </p>
         </div>
       </section>
 
