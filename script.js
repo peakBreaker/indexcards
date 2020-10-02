@@ -18,9 +18,9 @@ const CollapseBase = `
 
     <div id="collapse{0}" class="collapse" aria-labelledby="heading{0}" data-parent="#accordion">
       <div class="card-body">
-        <input class="form-control" type="text" value="{1}">
+        <input class="form-control question" type="text" value="{1}">
         <hr>
-        <textarea class="form-control" id="exampleFormControlTextarea{0}" rows="6">{2}</textarea>
+        <textarea class="form-control answer" id="exampleFormControlTextarea{0}" rows="6">{2}</textarea>
         <hr>
         <button id="selectCourseSubmit" class="btn-lg btn-block btn btn-danger" onclick="{elem=document.getElementById('card{0}');elem.parentNode.removeChild(elem)}">Delete</button>
       </div>
@@ -59,6 +59,7 @@ var accordionElem = document.getElementById("accordion");
 var cardsData = "";
 var data = "";
 var card = "";
+var dataIdx=0
 
 // Functions
 function getNextCard () {
@@ -91,6 +92,7 @@ function switchSide () {
 }
 
 function downloadObjectAsJson(exportObj, exportName){
+    // Finally download the json object
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
     var downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute("href",     dataStr);
@@ -101,11 +103,25 @@ function downloadObjectAsJson(exportObj, exportName){
 }
 function downloadCards() {
     console.log("downloading cards!" + data.length)
-    downloadObjectAsJson(data, "cards");
+    // Retreive the data from the edited objects
+    let elems = document.getElementsByClassName("card");
+    console.log(elems)
+    newData = [];
+    var i;
+    for (i = 0; i < elems.length; i++) {
+        let q = elems[i].getElementsByClassName("question")[0].value;
+        let a = elems[i].getElementsByClassName("answer")[0].innerHTML;
+        //let s = elems[i].getElementsByClassName("subject")[0].innerHTML;
+        let s = "";
+        console.log(q)
+        newData.push({"question": q, "answer": a, "subject": s});
+    };
+    console.log(newData);
+    downloadObjectAsJson(newData, "cards");
 }
 
 function getCards(url) {
-  let dataIdx=0
+  dataIdx = 0;
   fetch(url)
       .then(response => response.json())
       .then(json => {cardsData = json; data = json.slice()})
@@ -136,3 +152,4 @@ selectCourseSubmit.addEventListener("click", function(){
 
 editStackToggleElem.addEventListener("click", editModeToggle);
 dlCardsElem.addEventListener("click", downloadCards);
+document.getElementById("addCard").addEventListener("click", function () {accordionElem.innerHTML += CollapseBase.format(dataIdx++, "Empty card", "")});
