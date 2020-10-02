@@ -10,7 +10,7 @@ const CollapseBase = `
   <div class="card" id="card{0}">
     <div class="card-header" id="heading{0}">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{0}" aria-expanded="true" aria-controls="collapse{0}">
+        <button id="collapseButton{0}" class="btn btn-link" data-toggle="collapse" data-target="#collapse{0}" aria-expanded="true" aria-controls="collapse{0}" onclick="document.getElementById('collapseButton{0}').innerHTML=document.getElementById('questionInput{0}').value;">
           {1}
         </button>
       </h5>
@@ -18,7 +18,7 @@ const CollapseBase = `
 
     <div id="collapse{0}" class="collapse" aria-labelledby="heading{0}" data-parent="#accordion">
       <div class="card-body">
-        <input class="form-control question" type="text" value="{1}">
+        <input id="questionInput{0}" class="form-control question" type="text" value="{1}">
         <hr>
         <textarea class="form-control answer" id="exampleFormControlTextarea{0}" rows="6">{2}</textarea>
         <hr>
