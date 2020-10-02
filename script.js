@@ -110,7 +110,7 @@ function downloadCards() {
     var i;
     for (i = 0; i < elems.length; i++) {
         let q = elems[i].getElementsByClassName("question")[0].value;
-        let a = elems[i].getElementsByClassName("answer")[0].innerHTML;
+        let a = elems[i].getElementsByClassName("answer")[0].value;
         //let s = elems[i].getElementsByClassName("subject")[0].innerHTML;
         let s = "";
         console.log(q)
@@ -154,5 +154,5 @@ selectCourseSubmit.addEventListener("click", function(){
 editStackToggleElem.addEventListener("click", function() {editModeToggle(false)});
 document.getElementById("newStack").addEventListener("click", function() {editModeToggle(true)});
 dlCardsElem.addEventListener("click", downloadCards);
-document.getElementById("addCard").addEventListener("click", function () {accordionElem.innerHTML += CollapseBase.format(dataIdx++, "Empty card", "")});
+document.getElementById("addCard").addEventListener("click", function () {accordionElem.innerHTML += CollapseBase.format(dataIdx++, "Empty card", "Empty answer")});
 
