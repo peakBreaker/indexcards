@@ -15,7 +15,6 @@
     select{
         min-height: 5vh;
     }
-
     </style>
 
     <!-- JS, Popper.js, and jQuery -->
@@ -54,7 +53,7 @@
     </header>
 
 
-    <main class="mh-75" role="main">
+    <main id="cardGameMain" class="mh-75" role="main">
 
       <section class="jumbotron text-center">
         <div class="container">
@@ -63,6 +62,7 @@
             <select class="form-control" id="selectCourseDropdown">
             </select>
             <button id="selectCourseSubmit" class="btn-lg btn-block btn btn-primary my-2">Submit</button>
+            <button id="editStack" class="btn-lg btn-block btn btn-secondary my-3">Edit</button>
           </div>
         </div>
       </section>
@@ -77,7 +77,18 @@
           </p>
         </div>
       </section>
+    </main>
 
+    <main hidden="true" id="cardGameEdit" class="mh-75" role="main">
+      <section class="mh-75 jumbotron text-center">
+        <div class="mh-100 d-flex flex-column container">
+          <button id="downloadCards" class="btn-lg btn-block btn btn-secondary my-3">Download</button>
+          <h2 id="cardText" class="jumbotron-heading">Edit the deck, download and upload to server</h2>
+          <div id="accordion">
+
+          </div>
+        </div>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>

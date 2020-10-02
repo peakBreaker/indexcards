@@ -1,0 +1,12 @@
+[
+  {
+    "Subject": "TF",
+    "question": "When did Keras get integrated into TF?",
+    "answer": "In Tensorflow 2.0 release in 2019"
+  },
+  {
+    "Subject": "TF",
+    "question": "Who maintains TF?",
+    "answer": "TF is an open source project initiated by Google"
+  }
+]
