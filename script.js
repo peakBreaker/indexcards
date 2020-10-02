@@ -23,6 +23,12 @@ function getNextCard () {
   switchSideButton.hidden = false;
   answerText.innerHTML = "";
   remainingCards.innerHTML = "Remaining Cards in deck : "+cardsData.length;
+  if (cardsData.length === 0) {
+    nextCardButton.hidden = true;
+    switchSideButton.hidden = true;
+    cardText.innerHTML = "You have finished the deck!"
+    answerText.innerHTML = "Select a new deck to begin again";
+  }
 
   // Get a random card
   let randomCardIndex = Math.floor(Math.random() * cardsData.length);
