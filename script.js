@@ -1,7 +1,6 @@
 
 const SOURCES = [
-  {"url": "https://pages.peakbreaker.com/IndexCards/dp-100.json", title: "Microsoft DP100 Exam"},
-  {"url": "https://jsonplaceholder.typicode.com/todos", title: "just a test"}
+  {"url": "https://pages.peakbreaker.com/indexcards/dp-100.json", "title": "Microsoft DP100 Exam"},
 ]
 
 
@@ -31,7 +30,7 @@ function getNextCard () {
   card = cardsData[randomCardIndex]
 
   // TODO: Change this when we change the data
-  cardText.innerHTML = card.title;
+  cardText.innerHTML = card.question;
 
   // finally remove the card
   cardsData.splice(randomCardIndex, 1)
@@ -39,7 +38,7 @@ function getNextCard () {
 
 function switchSide () {
   switchSideButton.hidden = true;
-  answerText.innerHTML = card.title;
+  answerText.innerHTML = card.answer;
 }
 
 function getCards(url) {
