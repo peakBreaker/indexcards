@@ -1,0 +1,12 @@
+[
+  {
+    "Subject": "ML",
+    "question": "Scalers",
+    "answer": "StandardScaler, MinMaxScaler and Normalizer.\nStandardScaler assumes normal dist, sets mean of 0 and std dev og 1, and scales the data\nMinMaxScaler scales all features between 0 and 1, keeps the skews of distributions\nNormalizer is row based, all features add up to 1"
+  },
+  {
+    "Subject": "ML",
+    "question": "Regression Evaluation Metrics",
+    "answer": "MAE, RMSE, RAE, RSE, CoD(R2)\n MAE sums residauals from mean, RMSE is square of residuals mean and squared, RAE is absolute error divided by a simple predictor (the error from mean), RSE is the same as RAE just that it uses the squared error. Coefficient of Determination aka R2 is a 0 to 1 metric based on how large the prop of dependent variable is predicted based on independent variable(s)."
+  }
+]
