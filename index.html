@@ -37,6 +37,7 @@
           <a href="#" class="navbar-brand d-flex align-items-center">
             <strong>IndexCards</strong>
           </a>
+          <p class="navbar-brand d-flex align-items-center"> <strong>Remaining Cards : <span id="remainingCards"></span></strong></p>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -49,8 +50,8 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">This is a card</h1>
-          <p class="lead text-muted">Card text</p>
+          <h1 id="cardText" class="jumbotron-heading">This is a card</h1>
+          <p id="answerText" class="lead text-muted"></p>
           <p>
             <button id="switch_side" class="btn btn-secondary my-3">Other side</button>
             <button id="next_card" class="btn btn-primary my-2">Next card</button>
@@ -59,9 +60,6 @@
       </section>
 
     </main>
-
-
-
-  
+    <script src="script.js"></script>
   </body>
 </html>
