@@ -7,12 +7,23 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css" media="screen">
+    button {
+        min-height: 5vh;
+    }
+    select{
+        min-height: 5vh;
+    }
+
+    </style>
+
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body class="vh-100">
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -34,9 +45,6 @@
       </div>
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>IndexCards</strong>
-          </a>
           <p class="navbar-brand d-flex align-items-center"> <strong><span id="remainingCards">First select a deck</span></strong></p>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,7 +54,7 @@
     </header>
 
 
-    <main role="main">
+    <main class="mh-75" role="main">
 
       <section class="jumbotron text-center">
         <div class="container">
@@ -59,11 +67,11 @@
         </div>
       </section>
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 id="cardText" class="jumbotron-heading">Start by selecting a deck</h1>
+      <section class="mh-75 jumbotron text-center">
+        <div class="mh-100 d-flex flex-column container">
+          <h2 id="cardText" class="jumbotron-heading">Start by selecting a deck</h2>
           <p id="answerText" class="lead text-muted"></p>
-          <p>
+          <p class="mt-auto">
             <button id="switch_side"  hidden="true" class="btn-lg btn-block btn btn-secondary my-3">See answer</button>
             <button id="next_card" hidden="true" class="btn-lg btn-block btn btn-primary my-2">Next card</button>
           </p>

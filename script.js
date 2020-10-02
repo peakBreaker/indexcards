@@ -22,7 +22,7 @@ function getNextCard () {
   // Clear answer and update length of cards
   switchSideButton.hidden = false;
   answerText.innerHTML = "";
-  remainingCards.innerHTML = "Remaining Cards in deck : "+cardsData.length;
+  remainingCards.innerHTML = "Remaining Cards: "+cardsData.length;
   if (cardsData.length === 0) {
     nextCardButton.hidden = true;
     switchSideButton.hidden = true;
