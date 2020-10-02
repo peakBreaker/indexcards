@@ -122,6 +122,7 @@ function downloadCards() {
 
 function getCards(url) {
   dataIdx = 0;
+  accordionElem.innerHTML = "";
   fetch(url)
       .then(response => response.json())
       .then(json => {cardsData = json; data = json.slice()})
@@ -133,8 +134,8 @@ function getCards(url) {
   switchSideButton.hiddel = false
 }
 
-function editModeToggle() {
-    if (editGameElem.hidden) { getCards(SOURCES.find( ({ title }) => title === selectCourse.value).url) }
+function editModeToggle(newStack) {
+    if (editGameElem.hidden && !newStack) { getCards(SOURCES.find( ({ title }) => title === selectCourse.value).url) }
     mainGameElem.hidden=!mainGameElem.hidden;
     remainingCards.hidden=mainGameElem.hidden;
     editGameElem.hidden=!editGameElem.hidden;
@@ -150,6 +151,8 @@ selectCourseSubmit.addEventListener("click", function(){
   getCards(SOURCES.find( ({ title }) => title === selectCourse.value).url) 
 });
 
-editStackToggleElem.addEventListener("click", editModeToggle);
+editStackToggleElem.addEventListener("click", function() {editModeToggle(false)});
+document.getElementById("newStack").addEventListener("click", function() {editModeToggle(true)});
 dlCardsElem.addEventListener("click", downloadCards);
 document.getElementById("addCard").addEventListener("click", function () {accordionElem.innerHTML += CollapseBase.format(dataIdx++, "Empty card", "")});
+
